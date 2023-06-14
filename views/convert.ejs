@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../public/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form action="/convert" method="post">
+            <label for="">Devise</label>
+            <select class="form-control" name="deviseFrom" id="from">
+                <option value=""></option>
+                <option <% data.from==="EUR" ? "selected" : "" %> value="EUR">EUR</option>
+                <option <% data.from==="USD" ? "selected" : "" %> value="USD">USD</option>
+            </select>
+            <label for="">Devise rechechee</label>
+            <select class="form-control" name="deviseTo" id="to">
+                <option value=""></option>
+                <option <% data.to==="EUR" ? "selected" : "" %> value="EUR">EUR</option>
+                <option <% data.to==="USD" ? "selected" : "" %> value="USD">USD</option>
+            </select>
+            <label for="">Montant</label>
+            <input type="number" name="montant" value="<%=data.amount%>">
+            <label for="">Resultat</label>
+            <input type="text" name="result" value="<%=data.newAmount%>">
+            <input type="submit" value="Calculer">
+        </form>
+    </div>
+   
+</body>
+
+</html>
